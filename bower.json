@@ -1,0 +1,10 @@
+{
+  "name": "poocAzure",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass-official": "latest"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "~0.6.1"
+  }
+}
