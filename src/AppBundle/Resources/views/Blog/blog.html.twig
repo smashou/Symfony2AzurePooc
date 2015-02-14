@@ -1,11 +1,22 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 {% block content %}
-    <h1>{{ blog.name }}</h1>
-    <div>
-        {% for post in posts %}
-            <li><a href="{{ path('post', {id: post.id}) }}" title="">{{ post.title }}</a></li>
-        {% endfor %}
+    <div class="page-header">
+        <h1>{{ blog.name }}</h1>
     </div>
+    {% for post in posts %}
+        <div class="media">
+{#             <div class="media-left">
+                <a href="{{ path('post', {id: post.id }) }}" title="{{ post.title }}">
+                    <img class="media-object" src="#" alt="...">
+                </a>
+            </div> #}
+            <div class="media-body">
+                <h4 class="media-heading"><a href="{{ path('post', {id: post.id }) }}" title="{{ post.title }}">{{ post.title }}</a></h4>
+                <p>{{ post.content }}</p>
+            </div>
+        </div>
+    {% endfor %}
 
 {% endblock %}
+

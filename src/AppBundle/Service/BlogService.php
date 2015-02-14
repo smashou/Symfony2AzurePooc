@@ -20,7 +20,7 @@ class BlogService
 
     public function findAll()
     {
-        $blogs = $this->em->getRepository("AppBundle:Blog")->findAll();
+        $blogs = $this->em->getRepository("AppBundle:Blog")->findBy([], ['updatedAt' => 'ASC']);
 
         return $blogs;
     }

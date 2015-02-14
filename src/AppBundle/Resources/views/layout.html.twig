@@ -6,6 +6,11 @@
 {% endblock %}
 
 {% block body %}
+    <header>
+        {% block nav %}
+            {{ include('AppBundle:Nav:_nav.html.twig') }}
+        {% endblock %}
+    </header>
     <div class="container">
         {% block content '' %}
     </div>

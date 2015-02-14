@@ -23,7 +23,7 @@ class PostService
         if(null === $blog) {
             return null;
         }
-        $posts = $this->em->getRepository("AppBundle:Post")->findByBlog($blog);
+        $posts = $this->em->getRepository("AppBundle:Post")->findByBlog($blog, ['updatedAt' => 'DESC', 'id' => "DESC"]);
 
         return $posts;
     }

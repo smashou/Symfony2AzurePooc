@@ -27,6 +27,21 @@ class BlogController extends Controller
         ];
     }
 
+
+    public function blogsAction()
+    {
+        $blogService = $this->get("app.blog");
+
+        $blogs = $blogService->findAll();
+
+        return $this->render(
+            'AppBundle:Nav:blogs.html.twig',
+            [
+                'blogs' => $blogs
+            ]
+        );
+    }
+
     /**
      * @Route("/b/{id}", name="blog")
      * @Template()
