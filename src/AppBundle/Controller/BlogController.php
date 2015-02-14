@@ -27,8 +27,23 @@ class BlogController extends Controller
         ];
     }
 
+
+    public function blogsAction()
+    {
+        $blogService = $this->get("app.blog");
+
+        $blogs = $blogService->findAll();
+
+        return $this->render(
+            'AppBundle:Nav:blogs.html.twig',
+            [
+                'blogs' => $blogs
+            ]
+        );
+    }
+
     /**
-     * @Route("/blog/{id}", name="blog")
+     * @Route("/b/{id}", name="blog")
      * @Template()
      */
     public function blogAction(Request $request, $id)
@@ -62,7 +77,7 @@ class BlogController extends Controller
             $blogService = $this->get("app.blog");
             $blogService ->save($blog);
 
-            return $this->redirect($this->generateUrl('blogs'));
+            return $this->redirect($this->generateUrl('homepage'));
         }
 
         return [

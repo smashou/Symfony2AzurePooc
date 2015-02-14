@@ -1,5 +1,12 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
-{% block body %}
-    Home
+{% block content %}
+    {% for blog in blogs %}
+        <div class="media">
+            <div class="media-body">
+                <h4 class="media-heading"><a href="{{ path('blog', {id: blog.id}) }}" title="">{{ blog.name }}</a></h4>
+                <p>{{ blog.description }}</p>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}
