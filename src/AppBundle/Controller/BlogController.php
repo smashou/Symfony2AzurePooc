@@ -77,7 +77,7 @@ class BlogController extends Controller
             $blogService = $this->get("app.blog");
             $blogService ->save($blog);
 
-            return $this->redirect($this->generateUrl('blogs'));
+            return $this->redirect($this->generateUrl('homepage'));
         }
 
         return [
