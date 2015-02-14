@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>Name</source>
+                <target>Name</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>blog.create</source>
+                <target>Add a new Blog</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Toggle navigation</source>
+                <target>Toggle navigation</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>current</source>
+                <target>current</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Home</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Blogs</source>
+                <target>Blogs</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Add a Post</source>
+                <target>Add a Post</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Save</source>
+                <target>Save</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Description</source>
+                <target>New blog's description</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>Blog</source>
+                <target>Blog</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>Title</source>
+                <target>Title</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>Content</source>
+                <target>Content</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
