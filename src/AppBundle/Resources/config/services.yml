@@ -1,0 +1,12 @@
+services:
+    app.blog:
+        class: AppBundle\Service\BlogService
+        arguments:
+            - @doctrine.orm.entity_manager
+            - @logger
+
+    app.post:
+        class: AppBundle\Service\PostService
+        arguments:
+            - @doctrine.orm.entity_manager
+            - @logger

@@ -5,9 +5,8 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
-
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\BlogRepository")
  * @ORM\Table(name="blog")
  * @Gedmo\SoftDeleteable(fieldName="deletedAt")
  */
@@ -48,7 +47,7 @@ class Blog
     private $deletedAt;
 
     /**
-     * @ORM\OneToMany(targetEntity="Post", mappedBy="Blog")
+     * @ORM\OneToMany(targetEntity="Post", mappedBy="blog")
      **/
     private $posts;
 
@@ -62,6 +61,10 @@ class Blog
         return $this->id;
     }
 
+    public function __toString()
+    {
+        return $this->name;
+    }
     /**
      * Set name
      *

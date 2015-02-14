@@ -1,0 +1,12 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block body %}
+    <h1>Create a new Post</h1>
+    <div>
+        {{ form_start (form) }}
+            {{ form_widget(form) }}
+            <button type="submit" name="submit" id="submit" class="btn btn-success" >Save</button>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
