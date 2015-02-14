@@ -14,7 +14,7 @@ class PostController extends Controller
 {
 
     /**
-     * @Route("/p/{id}", name="post")
+     * @Route("/{_locale}/p/{id}", name="post", defaults={"_locale" = "en"}, requirements={"_locale" = "%app.locales%"}))
      * @Template()
      */
     public function postAction($id)
@@ -29,7 +29,7 @@ class PostController extends Controller
     }
 
     /**
-     * @Route("/post/new", name="new_post")
+     * @Route("/{_locale}/post/new", name="new_post", defaults={"_locale" = "en"}, requirements={"_locale" = "%app.locales%"}))
      * @Template()
      */
     public function createAction(Request $request)

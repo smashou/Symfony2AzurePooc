@@ -13,7 +13,7 @@ use AppBundle\Form\Type\BlogType;
 class BlogController extends Controller
 {
     /**
-     * @Route("/blogs", name="blogs")
+     * @Route("/{_locale}/blogs", name="blogs", defaults={"_locale" = "en"}, requirements={"_locale" = "%app.locales%"})
      * @Template()
      */
     public function indexAction()
@@ -43,7 +43,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/b/{id}", name="blog")
+     * @Route("/{_locale}/b/{id}", name="blog", defaults={"_locale" = "en"}, requirements={"_locale" = "%app.locales%"}))
      * @Template()
      */
     public function blogAction(Request $request, $id)
@@ -61,7 +61,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/blog/new", name="new_blog")
+     * @Route("/{_locale}/blog/new", name="new_blog", defaults={"_locale" = "en"}, requirements={"_locale" = "%app.locales%"}))
      * @Template()
      */
     public function createAction(Request $request)

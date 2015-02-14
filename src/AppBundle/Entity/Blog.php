@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\BlogRepository")
@@ -21,11 +22,13 @@ class Blog
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank(message = "blog.name.not_blank")
      */
     private $name;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Assert\NotBlank(message = "blog.description.not_blank")
      */
     private $description;
 
