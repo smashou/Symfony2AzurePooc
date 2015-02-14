@@ -3,11 +3,12 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="post")
+ * @Gedmo\SoftDeleteable(fieldName="deletedAt")
  */
 class Post
 {
@@ -30,16 +31,18 @@ class Post
 
     /**
      * @ORM\Column(type="datetime")
+     * @Gedmo\Timestampable(on="create")
      */
     private $createdAt;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Gedmo\Timestampable(on="update")
      */
     private $updatedAt;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $deletedAt;
 
@@ -190,7 +193,7 @@ class Post
     /**
      * Get blog
      *
-     * @return \AppBundle\Entity\Blog 
+     * @return \AppBundle\Entity\Blog
      */
     public function getBlog()
     {
