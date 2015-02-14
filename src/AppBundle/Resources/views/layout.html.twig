@@ -1,4 +1,16 @@
 {% extends '::base.html.twig' %}
+{% block title "Symfony - Form sample" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('front/styles/min.css') }}" type="text/css" media="all">
+{% endblock %}
 
 {% block body %}
+    <div class="container">
+        {% block content '' %}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('front/scripts/app.js') }}" /></script>
 {% endblock %}

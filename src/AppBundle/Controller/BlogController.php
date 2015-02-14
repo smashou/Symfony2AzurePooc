@@ -28,7 +28,7 @@ class BlogController extends Controller
     }
 
     /**
-     * @Route("/blog/{id}", name="blog")
+     * @Route("/b/{id}", name="blog")
      * @Template()
      */
     public function blogAction(Request $request, $id)

@@ -1,6 +1,6 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
-{% block body %}
+{% block content %}
     <ul>
         {% for blog in blogs %}
             <li><a href="{{ path('blog', {id: blog.id }) }}" title="">{{ blog.name }}</a></li>
