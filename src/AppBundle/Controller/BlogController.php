@@ -6,10 +6,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class DefaultController extends Controller
+class BlogController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/blogs", name="blogs")
      * @Template()
      */
     public function indexAction()
