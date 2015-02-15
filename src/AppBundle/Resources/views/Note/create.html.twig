@@ -7,7 +7,7 @@
             {{ form_label(form.title) }}
             {{ form_widget(form.title) }}
             {{ form_label(form.content) }}
-            {{ form_widget(form.content, {"attr": { "data-provide":"markdown"}})}}
+            {{ form_widget(form.content, {"attr": { "data-provide":"markdown", "rows": "15"}})}}
             {{ form_label(form.notebook) }}
             {{ form_widget(form.notebook) }}
             <button type="submit" name="submit" id="submit" class="btn btn-success" >Save</button>
