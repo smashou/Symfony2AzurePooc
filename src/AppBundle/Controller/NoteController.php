@@ -23,8 +23,11 @@ class NoteController extends Controller
 
         $note = $noteService->findOneById($id);
 
+        $notebook = $note->getNotebook();
+
         return [
-            "note" => $note
+            "note"     => $note,
+            "notebook" => $notebook
         ];
     }
 
