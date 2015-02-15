@@ -1,11 +1,11 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 {% block content %}
-    <h1>Create a new blog</h1>
+    <h1>{{ "note.create"|trans }}</h1>
     <div>
         {{ form_start (form) }}
             {{ form_widget(form) }}
-            <button type="submit" name="submit" id="submit" class="btn btn-success" >Save</button>
+            <button type="submit" name="submit" id="submit" class="btn btn-success" >{{ "Save"|trans }}</button>
         {{ form_end(form) }}
     </div>
 

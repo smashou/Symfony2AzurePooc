@@ -6,27 +6,27 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 
-class PostType extends AbstractType
+class NoteType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('title', null, ["label" => "Name"] )
-        ->add('content', "textarea", ["label" => "Description"] )
-        ->add('blog', 'entity', [
-            'class' => "AppBundle\Entity\Blog"
+        ->add('title', null, ["label" => "Title"] )
+        ->add('content', "textarea", ["label" => "Content"] )
+        ->add('notebook', 'entity', [
+            'class' => "AppBundle\Entity\Notebook"
         ]);
     }
 
     public function getName()
     {
-        return 'answer';
+        return 'note';
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Post',
+            'data_class' => 'AppBundle\Entity\Note',
         ));
     }
 }

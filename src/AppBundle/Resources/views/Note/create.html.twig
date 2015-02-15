@@ -1,7 +1,7 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 {% block content %}
-    <h1>Create a new Post</h1>
+    <h1>{{ "Add a Note"|trans }}</h1>
     <div>
         {{ form_start (form) }}
             {{ form_widget(form) }}

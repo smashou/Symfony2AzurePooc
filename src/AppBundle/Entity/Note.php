@@ -7,10 +7,10 @@ use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="post")
+ * @ORM\Table(name="note")
  * @Gedmo\SoftDeleteable(fieldName="deletedAt")
  */
-class Post
+class Note
 {
 /**
      * @ORM\Id
@@ -47,10 +47,10 @@ class Post
     private $deletedAt;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Blog", inversedBy="posts")
-     * @ORM\JoinColumn(name="blog_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Notebook", inversedBy="notes")
+     * @ORM\JoinColumn(name="notebook_id", referencedColumnName="id")
      **/
-    private $blog;
+    private $notebook;
 
     /**
      * Get id
@@ -66,7 +66,7 @@ class Post
      * Set title
      *
      * @param string $title
-     * @return Post
+     * @return Note
      */
     public function setTitle($title)
     {
@@ -89,7 +89,7 @@ class Post
      * Set content
      *
      * @param string $content
-     * @return Post
+     * @return Note
      */
     public function setContent($content)
     {
@@ -112,7 +112,7 @@ class Post
      * Set createdAt
      *
      * @param \DateTime $createdAt
-     * @return Post
+     * @return Note
      */
     public function setCreatedAt($createdAt)
     {
@@ -135,7 +135,7 @@ class Post
      * Set updatedAt
      *
      * @param \DateTime $updatedAt
-     * @return Post
+     * @return Note
      */
     public function setUpdatedAt($updatedAt)
     {
@@ -158,7 +158,7 @@ class Post
      * Set deletedAt
      *
      * @param \DateTime $deletedAt
-     * @return Post
+     * @return Note
      */
     public function setDeletedAt($deletedAt)
     {
@@ -178,25 +178,25 @@ class Post
     }
 
     /**
-     * Set blog
+     * Set Notebook
      *
-     * @param \AppBundle\Entity\Blog $blog
-     * @return Post
+     * @param \AppBundle\Entity\Notebook $notebook
+     * @return Note
      */
-    public function setBlog(\AppBundle\Entity\Blog $blog = null)
+    public function setNotebook(\AppBundle\Entity\Notebook $notebook = null)
     {
-        $this->blog = $blog;
+        $this->notebook = $notebook;
 
         return $this;
     }
 
     /**
-     * Get blog
+     * Get notebook
      *
-     * @return \AppBundle\Entity\Blog
+     * @return \AppBundle\Entity\Notebook
      */
-    public function getBlog()
+    public function getNotebook()
     {
-        return $this->blog;
+        return $this->notebook;
     }
 }

@@ -1,63 +1,63 @@
-AppBundle\Entity\Blog:
-    blog1:
+AppBundle\Entity\Notebook:
+    notebookService1:
         name: "iPhone"
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
-    blog2:
+    notebookService2:
         name: "iPad"
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
 
-AppBundle\Entity\Post:
-    post1:
+AppBundle\Entity\Note:
+    note1:
         title: "iPhone 3G"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
-        blog: @blog1
+        notebook: @notebookService1
 
-    post2:
+    note2:
         title: "iPhone 3GS"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
-        blog: @blog1
+        notebook: @notebookService1
 
-    post3:
+    note3:
         title: "iPhone 4"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
-        blog: @blog1
+        notebook: @notebookService1
 
-    post4:
+    note4:
         title: "iPhone 4S"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
-        blog: @blog1
+        notebook: @notebookService1
 
-    post5:
+    note5:
         title: "iPhone 5"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
-        blog: @blog1
+        notebook: @notebookService1
 
-    post6:
+    note6:
         title: "iPhone 5S"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
-        blog: @blog1
+        notebook: @notebookService1
 
-    post7:
+    note7:
         title: "iPhone 5C"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
-        blog: @blog1
+        notebook: @notebookService1
 
-    post8:
+    note8:
         title: "iPhone 6"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
-        blog: @blog1
+        notebook: @notebookService1
 
-    post9:
+    note9:
         title: "iPhone 6S"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
-        blog: @blog1
+        notebook: @notebookService1
 
-    post10:
+    note10:
         title: "iPad 1"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
-        blog: @blog2
+        notebook: @notebookService2
 
-    post11:
+    note11:
         title: "iPad 2"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
-        blog: @blog2
+        notebook: @notebookService2

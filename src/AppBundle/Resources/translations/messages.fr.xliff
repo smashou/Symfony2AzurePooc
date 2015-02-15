@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>Name</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>notebook.create</source>
+                <target>Créer un nouveau cahier</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Toggle navigation</source>
+                <target>Ouvrir/cacher la navigation</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>current</source>
+                <target>Actif</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Home</source>
+                <target>Accueil</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Notebooks</source>
+                <target>Cahiers de notes</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Add a Note</source>
+                <target>Ajouter une note</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>Save</source>
+                <target>Sauvegarder</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Description</source>
+                <target>Description</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>Notebook</source>
+                <target>Cahier de notes</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>Title</source>
+                <target>Titre</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>Content</source>
+                <target>Contenu</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

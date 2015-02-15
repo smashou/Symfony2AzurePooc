@@ -3,11 +3,11 @@
 namespace AppBundle\Service;
 
 use Doctrine\ORM\EntityManager;
-use AppBundle\Entity\Blog;
+use AppBundle\Entity\Notebook;
+use AppBundle\Entity\Note;
 use Monolog\Logger;
-use AppBundle\Service\PostService;
 
-class BlogService
+class NoteService
 {
     private $em;
     private $logger;
@@ -18,11 +18,14 @@ class BlogService
         $this->logger      = $logger;
     }
 
-    public function findAll()
+    public function findNotesByNotebook(Notebook $notebook)
     {
-        $blogs = $this->em->getRepository("AppBundle:Blog")->findBy([], ['updatedAt' => 'ASC']);
+        if(null === $notebook) {
+            return null;
+        }
+        $notes = $this->em->getRepository("AppBundle:Note")->findByNotebook($notebook, ['updatedAt' => 'DESC', 'id' => "DESC"]);
 
-        return $blogs;
+        return $notes;
     }
 
     public function findOneById($id)
@@ -30,19 +33,20 @@ class BlogService
         if(null === $id) {
             return null;
         }
-        $blog = $this->em->getRepository("AppBundle:Blog")->findOneById($id);
 
-        return $blog;
+        $note = $this->em->getRepository("AppBundle:Note")->findOneById($id);
+
+        return $note;
+
     }
 
-    public function save(Blog $blog)
+    public function save(Note $note)
     {
-        if(null !== $blog) {
-            $this->em->persist($blog);
+        if(null !== $note) {
+            $this->em->persist($note);
             $this->flush();
         }
     }
-
 
     private function flush()
     {

@@ -1,12 +1,18 @@
 services:
-    app.blog:
-        class: AppBundle\Service\BlogService
+    app.notebook:
+        class: AppBundle\Service\NotebookService
         arguments:
             - @doctrine.orm.entity_manager
             - @logger
 
-    app.post:
-        class: AppBundle\Service\PostService
+    app.note:
+        class: AppBundle\Service\NoteService
         arguments:
             - @doctrine.orm.entity_manager
             - @logger
+
+    app.locale_listener:
+        class: AppBundle\EventListener\LocaleListener
+        arguments: ["%kernel.default_locale%"]
+        tags:
+            - { name: kernel.event_subscriber }

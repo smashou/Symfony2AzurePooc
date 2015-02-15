@@ -1,0 +1,5 @@
+{% for notebook in notebooks %}
+    <li>
+        <a href="{{ path('notebook', {id: notebook.id}) }}" title="View {{ notebook.name }}">{{ notebook.name }}</a>
+    </li>
+{% endfor %}

@@ -6,7 +6,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 
-class BlogType extends AbstractType
+class NotebookType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -17,13 +17,13 @@ class BlogType extends AbstractType
 
     public function getName()
     {
-        return 'answer';
+        return 'notebook';
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Blog',
+            'data_class' => 'AppBundle\Entity\Notebook',
         ));
     }
 }
