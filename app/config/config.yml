@@ -90,3 +90,7 @@ hautelook_alice:
 
 parameters:
     app.locales: en|fr
+
+knp_markdown:
+    parser:
+        service: markdown.parser.sundown

@@ -51,12 +51,15 @@ class NotebookController extends Controller
         $notebookService = $this->get("app.notebook");
         $noteService = $this->get("app.note");
 
+        $locale = $request->getSession()->get("_locale");
+
         $notebook  = $notebookService->findOneById($id);
         $notes = $noteService->findNotesByNotebook($notebook);
 
         return [
             "notebook" => $notebook,
-            "notes"    => $notes
+            "notes"    => $notes,
+            "locale"   => $locale
         ];
     }
 
