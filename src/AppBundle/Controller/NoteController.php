@@ -14,7 +14,7 @@ class NoteController extends Controller
 {
 
     /**
-     * @Route("/{_locale}/note/{id}", name="note", defaults={"_locale" = "en"}, requirements={"_locale" = "%app.locales%"}))
+     * @Route("/{_locale}/no/{id}", name="note", defaults={"_locale" = "en"}, requirements={"_locale" = "%app.locales%"}))
      * @Template()
      */
     public function noteAction($id)
