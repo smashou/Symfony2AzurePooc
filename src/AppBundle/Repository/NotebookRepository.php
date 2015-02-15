@@ -6,7 +6,7 @@ use Doctrine\ORM\AbstractQuery;
 use Doctrine\ORM\EntityRepository;
 
 
-class BlogRepository extends EntityRepository
+class NotebookRepository extends EntityRepository
 {
 
 }

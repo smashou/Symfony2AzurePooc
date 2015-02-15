@@ -7,8 +7,8 @@
                 <target>Nom</target>
             </trans-unit>
             <trans-unit id="2">
-                <source>blog.create</source>
-                <target>Créer un nouveau blog</target>
+                <source>notebook.create</source>
+                <target>Créer un nouveau cahier</target>
             </trans-unit>
             <trans-unit id="3">
                 <source>Toggle navigation</source>
@@ -23,12 +23,12 @@
                 <target>Accueil</target>
             </trans-unit>
             <trans-unit id="6">
-                <source>Blogs</source>
-                <target>Blogs</target>
+                <source>Notebooks</source>
+                <target>Cahiers de notes</target>
             </trans-unit>
             <trans-unit id="7">
-                <source>Add a Post</source>
-                <target>Ajouter un article</target>
+                <source>Add a Note</source>
+                <target>Ajouter une note</target>
             </trans-unit>
             <trans-unit id="8">
                 <source>Save</source>
@@ -39,8 +39,8 @@
                 <target>Description</target>
             </trans-unit>
             <trans-unit id="10">
-                <source>Blog</source>
-                <target>Blog</target>
+                <source>Notebook</source>
+                <target>Cahier de notes</target>
             </trans-unit>
             <trans-unit id="11">
                 <source>Title</source>

@@ -7,11 +7,11 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="AppBundle\Repository\BlogRepository")
- * @ORM\Table(name="blog")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\NotebookRepository")
+ * @ORM\Table(name="notebook")
  * @Gedmo\SoftDeleteable(fieldName="deletedAt")
  */
-class Blog
+class Notebook
 {
 /**
      * @ORM\Id
@@ -22,13 +22,13 @@ class Blog
 
     /**
      * @ORM\Column(type="string")
-     * @Assert\NotBlank(message = "blog.name.not_blank")
+     * @Assert\NotBlank(message = "notebook.name.not_blank")
      */
     private $name;
 
     /**
      * @ORM\Column(type="text", nullable=true)
-     * @Assert\NotBlank(message = "blog.description.not_blank")
+     * @Assert\NotBlank(message = "notebook.description.not_blank")
      */
     private $description;
 
@@ -50,9 +50,9 @@ class Blog
     private $deletedAt;
 
     /**
-     * @ORM\OneToMany(targetEntity="Post", mappedBy="blog")
+     * @ORM\OneToMany(targetEntity="Note", mappedBy="notebook")
      **/
-    private $posts;
+    private $notes;
 
     /**
      * Get id
@@ -72,7 +72,7 @@ class Blog
      * Set name
      *
      * @param string $name
-     * @return Blog
+     * @return Notebook
      */
     public function setName($name)
     {
@@ -95,7 +95,7 @@ class Blog
      * Set description
      *
      * @param string $description
-     * @return Blog
+     * @return Notebook
      */
     public function setDescription($description)
     {
@@ -118,7 +118,7 @@ class Blog
      * Set createdAt
      *
      * @param \DateTime $createdAt
-     * @return Blog
+     * @return Notebook
      */
     public function setCreatedAt($createdAt)
     {
@@ -141,7 +141,7 @@ class Blog
      * Set updatedAt
      *
      * @param \DateTime $updatedAt
-     * @return Blog
+     * @return Notebook
      */
     public function setUpdatedAt($updatedAt)
     {
@@ -164,7 +164,7 @@ class Blog
      * Set deletedAt
      *
      * @param \DateTime $deletedAt
-     * @return Blog
+     * @return Notebook
      */
     public function setDeletedAt($deletedAt)
     {
@@ -187,39 +187,39 @@ class Blog
      */
     public function __construct()
     {
-        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->notes = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add posts
+     * Add notes
      *
-     * @param \AppBundle\Entity\Post $posts
-     * @return Blog
+     * @param \AppBundle\Entity\Note $notes
+     * @return Notebook
      */
-    public function addPost(\AppBundle\Entity\Post $posts)
+    public function addNote(\AppBundle\Entity\Note $notes)
     {
-        $this->posts[] = $posts;
+        $this->notes[] = $notes;
 
         return $this;
     }
 
     /**
-     * Remove posts
+     * Remove notes
      *
-     * @param \AppBundle\Entity\Post $posts
+     * @param \AppBundle\Entity\Note $notes
      */
-    public function removePost(\AppBundle\Entity\Post $posts)
+    public function removeNote(\AppBundle\Entity\Note $notes)
     {
-        $this->posts->removeElement($posts);
+        $this->notes->removeElement($notes);
     }
 
     /**
-     * Get posts
+     * Get notes
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getPosts()
+    public function getNotes()
     {
-        return $this->posts;
+        return $this->notes;
     }
 }

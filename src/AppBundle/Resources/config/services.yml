@@ -1,12 +1,12 @@
 services:
-    app.blog:
-        class: AppBundle\Service\BlogService
+    app.notebook:
+        class: AppBundle\Service\NotebookService
         arguments:
             - @doctrine.orm.entity_manager
             - @logger
 
-    app.post:
-        class: AppBundle\Service\PostService
+    app.note:
+        class: AppBundle\Service\NoteService
         arguments:
             - @doctrine.orm.entity_manager
             - @logger

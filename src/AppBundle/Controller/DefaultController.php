@@ -14,12 +14,12 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $blogService = $this->get("app.blog");
+        $notebookService = $this->get("app.notebook");
 
-        $blogs = $blogService->findAll();
+        $notebooks = $notebookService->findAll();
 
         return [
-            'blogs' => $blogs
+            'notebooks' => $notebooks
         ];
     }
 
