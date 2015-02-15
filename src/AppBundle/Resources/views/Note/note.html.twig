@@ -4,10 +4,8 @@
     <div class="page-header">
         <h1>{{ note.title }} <small>{{ notebook.name }}</small></h1>
     </div>
-    <div>
-        <p>
-            {{ note.content|markdown }}
-        </p>
+    <div data-provide="markdown-editable" data-savable="true">
+        {{ note.content|markdown }}
     </div>
 
 {% endblock %}
