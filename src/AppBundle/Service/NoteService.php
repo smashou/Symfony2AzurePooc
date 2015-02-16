@@ -28,6 +28,13 @@ class NoteService
         return $notes;
     }
 
+    public function findLasts()
+    {
+        $notes = $this->em->getRepository("AppBundle:Note")->findBy([], ['updatedAt' => "DESC"]);
+
+        return $notes;
+    }
+
     public function findOneById($id)
     {
         if(null === $id) {

@@ -48,7 +48,7 @@ class NoteController extends Controller
             $noteService = $this->get("app.note");
             $noteService ->save($note);
 
-            return $this->redirect($this->generateUrl('notebooks'));
+            return $this->redirect($this->generateUrl('notebook', ["id" => $note->getNotebook()->getId()]));
         }
 
         return [
@@ -98,7 +98,7 @@ class NoteController extends Controller
             $noteService = $this->get("app.note");
             $noteService ->save($note);
 
-            return $this->redirect($this->generateUrl('notebooks'));
+            return $this->redirect($this->generateUrl('notebook', ["id" => $note->getNotebook()->getId()]));
         }
 
         return [

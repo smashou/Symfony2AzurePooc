@@ -1,12 +1,33 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 {% block content %}
-    {% for notebook in notebooks %}
-        <div class="media">
-            <div class="media-body">
-                <h4 class="media-heading"><a href="{{ path('notebook', {id: notebook.id}) }}" title="">{{ notebook.name }}</a></h4>
-                <p>{{ notebook.description }}</p>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="page-header">
+                <h1>{{ 'notebooks'|trans }}</h1>
             </div>
+            {% for notebook in notebooks %}
+                <div class="media">
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href="{{ path('notebook', {id: notebook.id}) }}" title="">{{ notebook.name }}</a></h4>
+                        <p>{{ notebook.description }}</p>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-    {% endfor %}
+        <div class="col-md-3">
+            <div class="page-header">
+                <h1>{{ 'last.notes'|trans }}</h1>
+            </div>
+            <ul>
+                {% for note in notes %}
+                    <li>
+                        <a href="{{ path('note', {id: note.id}) }}" title="{{ note.title }}">{{ note.title }}</a>
+                        <br>
+                        <small>{{ note.updatedAt|localizeddate('full', 'none', locale) }}</small>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 {% endblock %}

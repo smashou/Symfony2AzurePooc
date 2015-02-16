@@ -28,7 +28,7 @@
             </trans-unit>
             <trans-unit id="7">
                 <source>Add a Note</source>
-                <target>Add a Note</target>
+                <target>+ Note</target>
             </trans-unit>
             <trans-unit id="8">
                 <source>Save</source>
@@ -57,6 +57,10 @@
             <trans-unit id="14">
                 <source>update.current.note</source>
                 <target>Modifying</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>last.notes</source>
+                <target>Last notes</target>
             </trans-unit>
         </body>
     </file>
