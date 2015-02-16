@@ -2,7 +2,8 @@
   "name": "poocAzure",
   "private": true,
   "dependencies": {
-    "bootstrap-sass-official": "latest"
+    "bootstrap-sass-official": "latest",
+    "bootstrap-markdown": "latest"
   },
   "devDependencies": {
     "grunt-contrib-watch": "~0.6.1"

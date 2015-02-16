@@ -32,7 +32,9 @@ twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
     form:
-        resources: ['bootstrap_3_layout.html.twig']
+        resources:
+            - 'bootstrap_3_layout.html.twig'
+            - 'AppBundle:Form:forms.html.twig'
 
 # Assetic Configuration
 assetic:
@@ -90,3 +92,7 @@ hautelook_alice:
 
 parameters:
     app.locales: en|fr
+
+knp_markdown:
+    parser:
+        service: markdown.parser.sundown

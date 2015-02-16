@@ -1,12 +1,46 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 {% block content %}
-    {% for notebook in notebooks %}
-        <div class="media">
-            <div class="media-body">
-                <h4 class="media-heading"><a href="{{ path('notebook', {id: notebook.id}) }}" title="">{{ notebook.name }}</a></h4>
-                <p>{{ notebook.description }}</p>
+    <div class="row homepage">
+        <div class="col-md-9">
+            <div class="page-header">
+                <h1>{{ 'last.notes'|trans }}</h1>
             </div>
+            {% for  note in  notes%}
+                <div class="media">
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href="{{ path('note', {id: note.id}) }}" title="{{ note.title }}">{{ note.title }}</a></h4>
+                        <small>{{ note.updatedAt|localizeddate('full', 'none', locale) }}</small>
+                    </div>
+                </div>
+            {% endfor %}
         </div>
-    {% endfor %}
+        <div class="col-md-3">
+            <div class="page-header">
+                <h1>{{ 'notebooks'|trans }}</h1>
+            </div>
+                {% for notebook in notebooks %}
+                <div class="media">
+                    {% if notebook.fileName is defined and notebook.fileName is not null %}
+                    <div class="media-left">
+                        <a href="{{ path('notebook', {id: notebook.id }) }}" title="{{ notebook.name }}">
+                            <img class="media-object" src="{{ asset(notebook.getWebPath()) }}" alt="{{ notebook.name }}">
+                        </a>
+                    </div>
+                    {% else %}
+                        <div class="media-left">
+                            <a href="{{ path('notebook', {id: notebook.id }) }}" title="{{ notebook.name }}">
+                                <img class="media-object" src="#" alt="{{ notebook.name }}">
+                            </a>
+                        </div>
+                    {% endif %}
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href="{{ path('notebook', {id: notebook.id}) }}" title="{{ notebook.name }}">{{ notebook.name }}</a></h4>
+                        <small>{{ notebook.updatedAt|localizeddate('full', 'none', locale) }}</small>
+                    </div>
+                </div>
+
+                {% endfor %}
+        </div>
+    </div>
 {% endblock %}

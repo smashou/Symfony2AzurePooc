@@ -11,8 +11,9 @@ class NotebookType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('name', null, ["label" => "Name"] )
-        ->add('description', "textarea", ["label" => "Description"] );
+        ->add('name', null, [ "label" => "Name" ] )
+        ->add('description', "textarea", [ "label" => "Description" ] )
+        ->add('file', 'file', [ "label" => "Picture", "required" => false ]);
     }
 
     public function getName()
