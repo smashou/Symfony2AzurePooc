@@ -6,6 +6,10 @@
         {{ form_start (form) }}
             {{ form_row(form.title) }}
             {{ form_row(form.content, {"attr": { "data-provide":"markdown", "rows": "15"}})}}
+            {{ form_row(form.documents) }}
+                <a href="#" class="collection_add">
+                {{ 'form.collection.add_attachment'|trans }}
+            </a>
             {{ form_row(form.notebook) }}
             <button type="submit" name="submit" id="submit" class="btn btn-success" >Save</button>
         {{ form_end(form) }}
