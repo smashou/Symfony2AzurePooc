@@ -1,0 +1,14 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>{{ note.title }} <small>{{ 'update.current.note'|trans }}</small></h1>
+    <div>
+        {{ form_start (form) }}
+            {{ form_row(form.title) }}
+            {{ form_row(form.content, {"attr": { "data-provide":"markdown", "rows": "15"}})}}
+            {{ form_row(form.notebook) }}
+            <button type="submit" name="submit" id="submit" class="btn btn-success" >Save</button>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

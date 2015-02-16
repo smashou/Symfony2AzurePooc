@@ -56,5 +56,57 @@ class NoteController extends Controller
         ];
     }
 
+    /**
+     * @Route("/{_locale}/note/up/{id}", name="update_note", defaults={"_locale" = "en"}, requirements={"_locale" = "%app.locales%"}))
+     * @Template()
+     */
+    public function updateAjaxAction(Request $request, $id)
+    {
+        $noteService = $this->get("app.note");
+        $note        = $noteService->findOneById($id);
+
+        if(null !== $note) {
+            $note->setContent($request->get("content"));
+            $noteService->flush();
+        }else{
+            return new HttpNotFoundException;
+        }
+
+        return ["ok"];
+    }
+
+    /**
+     * @Route("/{_locale}/note/u/{id}", name="update_note", defaults={"_locale" = "en"}, requirements={"_locale" = "%app.locales%"}))
+     * @Template()
+     */
+    public function updateAction(Request $request, $id)
+    {
+        $noteService = $this->get("app.note");
+
+        $note = $noteService->findOneById($id);
+
+        if(null === $note) {
+
+        }
+
+        $form = $this->createForm(new NoteType(), $note);
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+
+            $noteService = $this->get("app.note");
+            $noteService ->save($note);
+
+            return $this->redirect($this->generateUrl('notebooks'));
+        }
+
+        return [
+            'note' => $note,
+            'form' => $form->createView()
+        ];
+
+    }
+
 
 }
