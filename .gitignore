@@ -28,6 +28,7 @@
 /web/front/vendor/
 .sass-cache/
 node_modules/
+/web/upload/
 
 # PHPUnit
 /app/phpunit.xml
