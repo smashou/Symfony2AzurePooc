@@ -1,7 +1,7 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 {% block content %}
-    <div class="row">
+    <div class="row homepage">
         <div class="col-md-9">
             <div class="page-header">
                 <h1>{{ 'last.notes'|trans }}</h1>
@@ -19,15 +19,28 @@
             <div class="page-header">
                 <h1>{{ 'notebooks'|trans }}</h1>
             </div>
-            <ul>
                 {% for notebook in notebooks %}
-                    <li>
-                        <a href="{{ path('notebook', {id: notebook.id}) }}" title="{{ notebook.name }}">{{ notebook.name }}</a>
-                        <br>
+                <div class="media">
+                    {% if notebook.fileName is defined and notebook.fileName is not null %}
+                    <div class="media-left">
+                        <a href="{{ path('notebook', {id: notebook.id }) }}" title="{{ notebook.name }}">
+                            <img class="media-object" src="{{ asset(notebook.getWebPath()) }}" alt="{{ notebook.name }}">
+                        </a>
+                    </div>
+                    {% else %}
+                        <div class="media-left">
+                            <a href="{{ path('notebook', {id: notebook.id }) }}" title="{{ notebook.name }}">
+                                <img class="media-object" src="#" alt="{{ notebook.name }}">
+                            </a>
+                        </div>
+                    {% endif %}
+                    <div class="media-body">
+                        <h4 class="media-heading"><a href="{{ path('notebook', {id: notebook.id}) }}" title="{{ notebook.name }}">{{ notebook.name }}</a></h4>
                         <small>{{ notebook.updatedAt|localizeddate('full', 'none', locale) }}</small>
-                    </li>
+                    </div>
+                </div>
+
                 {% endfor %}
-            </ul>
         </div>
     </div>
 {% endblock %}
