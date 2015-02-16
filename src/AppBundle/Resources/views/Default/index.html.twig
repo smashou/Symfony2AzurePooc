@@ -4,27 +4,27 @@
     <div class="row">
         <div class="col-md-9">
             <div class="page-header">
-                <h1>{{ 'notebooks'|trans }}</h1>
+                <h1>{{ 'last.notes'|trans }}</h1>
             </div>
-            {% for notebook in notebooks %}
+            {% for  note in  notes%}
                 <div class="media">
                     <div class="media-body">
-                        <h4 class="media-heading"><a href="{{ path('notebook', {id: notebook.id}) }}" title="">{{ notebook.name }}</a></h4>
-                        <p>{{ notebook.description }}</p>
+                        <h4 class="media-heading"><a href="{{ path('note', {id: note.id}) }}" title="{{ note.title }}">{{ note.title }}</a></h4>
+                        <small>{{ note.updatedAt|localizeddate('full', 'none', locale) }}</small>
                     </div>
                 </div>
             {% endfor %}
         </div>
         <div class="col-md-3">
             <div class="page-header">
-                <h1>{{ 'last.notes'|trans }}</h1>
+                <h1>{{ 'notebooks'|trans }}</h1>
             </div>
             <ul>
-                {% for note in notes %}
+                {% for notebook in notebooks %}
                     <li>
-                        <a href="{{ path('note', {id: note.id}) }}" title="{{ note.title }}">{{ note.title }}</a>
+                        <a href="{{ path('notebook', {id: notebook.id}) }}" title="{{ notebook.name }}">{{ notebook.name }}</a>
                         <br>
-                        <small>{{ note.updatedAt|localizeddate('full', 'none', locale) }}</small>
+                        <small>{{ notebook.updatedAt|localizeddate('full', 'none', locale) }}</small>
                     </li>
                 {% endfor %}
             </ul>
