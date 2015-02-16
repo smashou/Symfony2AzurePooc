@@ -53,6 +53,11 @@ class Note
     private $notebook;
 
     /**
+     * @ORM\OneToMany(targetEntity="Document", mappedBy="notes")
+     **/
+    private $documents;
+
+    /**
      * Get id
      *
      * @return integer
@@ -198,5 +203,45 @@ class Note
     public function getNotebook()
     {
         return $this->notebook;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->documents = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add documents
+     *
+     * @param \AppBundle\Entity\Document $documents
+     * @return Note
+     */
+    public function addDocument(\AppBundle\Entity\Document $documents)
+    {
+        $this->documents[] = $documents;
+
+        return $this;
+    }
+
+    /**
+     * Remove documents
+     *
+     * @param \AppBundle\Entity\Document $documents
+     */
+    public function removeDocument(\AppBundle\Entity\Document $documents)
+    {
+        $this->documents->removeElement($documents);
+    }
+
+    /**
+     * Get documents
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDocuments()
+    {
+        return $this->documents;
     }
 }
