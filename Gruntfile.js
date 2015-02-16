@@ -14,6 +14,8 @@ module.exports = function (grunt) {
             scripts: {
                 files: {
                     'scripts/jquery.js': 'jquery/dist/jquery.js',
+                    'scripts/src.js': '../../../src/AppBundle/Resources/Public/js/app.js',
+                    'styles/app.css': '../../../src/AppBundle/Resources/Public/css/app.css',
                     'scripts/bootstrap.js': 'bootstrap-sass-official/assets/javascripts/bootstrap.js',
                     'scripts/markdown.js' : 'bootstrap-markdown/js/bootstrap-markdown.js',
                     'styles/mardown.css' : 'bootstrap-markdown/css/bootstrap-markdown.min.css',
@@ -64,6 +66,7 @@ module.exports = function (grunt) {
                     'web/front/scripts/markdown.js',
                     'web/front/scripts/markdown-to.js',
                     'web/front/scripts/to-markdown.js',
+                    'web/front/scripts/src.js',
                     '!web/front/scripts/concat.js'
                 ],
                 dest: 'web/front/scripts/concat.js'
