@@ -62,6 +62,14 @@
                 <source>last.notes</source>
                 <target>Last notes</target>
             </trans-unit>
+            <trans-unit id="16">
+                <source>Login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>register</source>
+                <target>Register</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

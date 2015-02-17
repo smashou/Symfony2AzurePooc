@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new UserBundle\UserBundle(),
             new AppBundle\AppBundle(),
         );
 

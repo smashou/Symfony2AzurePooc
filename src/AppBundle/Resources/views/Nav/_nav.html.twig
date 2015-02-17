@@ -25,7 +25,12 @@
         </li>
         <li class="new-post"><a class="btn btn-success" href="{{ path('new_note') }}" title="Add a new Note">{{ "Add a Note"|trans }}</a></li>
       </ul>
-      {% render url('fos_user_security_login') %}
+      <ul class="nav navbar-nav navbar-right">
+            {% render url('fos_user_registration_register') %}
+            {% render url('fos_user_security_login') %}
+      </ul>
+
+
     </div>
   </div>
 </nav>

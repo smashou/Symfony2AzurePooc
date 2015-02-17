@@ -1,36 +1,37 @@
 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-    <a href="{{ path('fos_user_security_logout') }}">
-        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-    </a>
+
+    <li class="dropdown">
+        <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">{{ app.user.username }} <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+            <li class="divider"></li>
+            <li><a href="{{ path('fos_user_security_logout') }}" title="{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>
+        </ul>
+    </li>
 {% else %}
     {% block fos_user_content %}
     {% if error %}
         <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
     {% endif %}
 
-        <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-                <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">Login <span class="caret"></span></a>
-                <div class="dropdown-menu" style="padding:17px;">
-                      <form action="{{ path("fos_user_security_check") }}" method="post" class="form">
-                            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-                            <div class="form-group">
-                                <input type="text" id="username" name="_username" placeholder="email" class="form-control" value="{{ last_username }}" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <input type="password" id="password" class="form-control" placeholder="password" name="_password" required="required" />
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-                                <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
-                            </div>
-                            <input type="submit" id="_submit" class="btn btn-success" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
-                    </form>
-                </div>
-            </li>
-        </ul>
+    <li class="dropdown">
+        <a class="dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false">{{ "login"|trans }} <span class="caret"></span></a>
+        <div class="dropdown-menu" style="padding:17px;">
+              <form action="{{ path("fos_user_security_check") }}" method="post" class="form">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                    <div class="form-group">
+                        <input type="text" id="username" name="_username" placeholder="email" class="form-control" value="{{ last_username }}" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" class="form-control" placeholder="password" name="_password" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                        <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+                    </div>
+                    <input type="submit" id="_submit" class="btn btn-success" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+            </form>
+        </div>
+    </li>
     {% endblock fos_user_content %}
 {% endif %}
-
 
