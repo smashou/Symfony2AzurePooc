@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+./app/console do:da:dr --force --quiet $1
+./app/console do:da:cr $1
+./app/console do:sc:cr $1
+
+./app/console ca:cl $1
+./app/console do:fi:lo -n $1
+
+./app/console assets:install --symlink $1
+
+npm install
+bower install
+grunt
+
