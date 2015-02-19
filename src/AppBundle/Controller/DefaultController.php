@@ -19,6 +19,7 @@ class DefaultController extends Controller
         $noteService     = $this->get("app.note");
 
         $notebooks = $notebookService->findAll();
+
         $notes     = $noteService->findLasts();
         $locale    = $request->getSession()->get("_locale");
 

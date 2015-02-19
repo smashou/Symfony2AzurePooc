@@ -19,8 +19,14 @@ class NotebookController extends Controller
     public function indexAction()
     {
         $notebookService = $this->get("app.notebook");
+        $securityContext = $this->get('security.context');
 
-        $notebooks = $notebookService->findAll();
+        if($securityContext->isGranted("ROLE_USER")){
+            $user      = $this->getUser();
+            $notebooks = $notebookService->findByUser($user);
+        }else{
+             $notebooks = $notebookService->findPublic();
+        }
 
         return [
             'notebooks' => $notebooks
@@ -31,8 +37,14 @@ class NotebookController extends Controller
     public function NotebooksAction()
     {
         $notebookService = $this->get("app.notebook");
+        $securityContext = $this->get('security.context');
 
-        $notebooks = $notebookService->findAll();
+        if($securityContext->isGranted("ROLE_USER")){
+            $user      = $this->getUser();
+            $notebooks = $notebookService->findByUser($user);
+        }else{
+             $notebooks = $notebookService->findPublic();
+        }
 
         return $this->render(
             'AppBundle:Nav:notebooks.html.twig',

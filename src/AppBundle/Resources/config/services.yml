@@ -4,12 +4,16 @@ services:
         arguments:
             - @doctrine.orm.entity_manager
             - @logger
+            - @security.context
+            - @security.token_storage
 
     app.note:
         class: AppBundle\Service\NoteService
         arguments:
             - @doctrine.orm.entity_manager
             - @logger
+            - @security.context
+            - @security.token_storage
 
     app.locale_listener:
         class: AppBundle\EventListener\LocaleListener

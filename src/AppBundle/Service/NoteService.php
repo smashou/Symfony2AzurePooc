@@ -6,16 +6,17 @@ use Doctrine\ORM\EntityManager;
 use AppBundle\Entity\Notebook;
 use AppBundle\Entity\Note;
 use Monolog\Logger;
+use Symfony\Component\Security\Core\SecurityContext;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
+use AppBundle\Service\CoreEntityService;
 
-class NoteService
+class NoteService extends CoreEntityService
 {
-    private $em;
-    private $logger;
 
-    public function __construct(EntityManager $entityManager, Logger $logger)
+
+    public function __construct(EntityManager $entityManager, Logger $logger, SecurityContext $security, TokenStorage $tokenStorage)
     {
-        $this->em          = $entityManager;
-        $this->logger      = $logger;
+        parent::__construct($entityManager, $logger, $security, $tokenStorage);
     }
 
     public function findNotesByNotebook(Notebook $notebook)
@@ -47,23 +48,6 @@ class NoteService
 
     }
 
-    public function save(Note $note)
-    {
-        if(null !== $note) {
-            $this->em->persist($note);
-            $this->flush();
-        }
-    }
-
-    private function flush()
-    {
-        try{
-            $this->em->flush();
-        } catch ( \Exception $e) {
-            $msg = '### Message ### \n'.$e->getMessage().'\n### Trace ### \n'.$e->getTraceAsString();
-            $this->logger->critical($msg);
-        }
-    }
 
 }
 

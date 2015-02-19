@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use UserBundle\Entity\User;
 
 /**
  * @ORM\Entity
@@ -58,6 +59,17 @@ class Note
     private $documents;
 
     /**
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", inversedBy="notes")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     **/
+    private $user;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $private = true;
+
+    /**
      * Get id
      *
      * @return integer
@@ -65,6 +77,30 @@ class Note
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getPrivate()
+    {
+        return $this->private;
+    }
+
+    public function setPrivate($private)
+    {
+        $this->private = $private;
+
+        return $this;
+    }
+
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    public function setUser(User $user)
+    {
+        $this->user = $user;
+
+        return $this;
     }
 
     /**
@@ -238,7 +274,7 @@ class Note
     /**
      * Get documents
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getDocuments()
     {

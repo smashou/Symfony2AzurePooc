@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-
+use UserBundle\Entity\User;
 
 /**
  * @ORM\Entity(repositoryClass="AppBundle\Repository\NotebookRepository")
@@ -68,6 +68,17 @@ class Notebook
     private $fileName;
 
     /**
+     * @ORM\Column(type="boolean")
+     */
+    private $private = true;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", inversedBy="notebooks")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     **/
+    private $user;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     protected $path;
@@ -88,6 +99,31 @@ class Notebook
     {
         return $this->name;
     }
+
+    public function getPrivate()
+    {
+        return $this->private;
+    }
+
+    public function setPrivate($private)
+    {
+        $this->private = $private;
+
+        return $this;
+    }
+
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    public function setUser(User $user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
     /**
      * Set name
      *
