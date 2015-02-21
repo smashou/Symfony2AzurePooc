@@ -11,6 +11,9 @@ And maybe in the future:
 * Azure Blob storage
 * Azure Mobile notification/push
 
+
+This project is a really simple notebook powered by Markdown.
+
 Feel free to PR what ever you want :)
 
 
@@ -18,7 +21,7 @@ TODO
 ----
 
 * Behat features
-* FInish FosUserBundle integration
+* Finish FosUserBundle integration
 * Try to integrate [AzureDistributionBundle](https://github.com/brainsonic/AzureDistributionBundle)
 * Create azure deployment script
 * Test Test Test Test
@@ -66,3 +69,12 @@ Run behat test
 ```
 ./bin/behat
 ```
+
+
+ROADMAP
+-------
+
+* Change the javascript bootstrap-markdown by another more UF
+* Use fancy URL instead of id
+* Use Groups from FosUserBundle for sharing notes between team members
+* Integrate [Etherpad](http://etherpad.org/) as a collaborative editor
