@@ -26,6 +26,7 @@ class DefaultController extends Controller
         }
 
         $notes     = $noteService->findLasts();
+        
         $locale    = $request->getSession()->get("_locale");
 
         return [

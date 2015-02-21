@@ -66,6 +66,11 @@ class NotebookController extends Controller
         $locale = $request->getSession()->get("_locale");
 
         $notebook  = $notebookService->findOneById($id);
+
+        if (false === $this->get('security.authorization_checker')->isGranted('view', $notebook)) {
+            throw new AccessDeniedException('Unauthorised access!');
+        }
+
         $notes = $noteService->findNotesByNotebook($notebook);
 
         return [
@@ -84,7 +89,7 @@ class NotebookController extends Controller
         //If the user is not authenticated please register
         if(!$this->isGranted("ROLE_USER")) {
 
-            $this->addFlash("notice", "Please register to create a notebook");
+            $this->addFlash("notice", "Please register or login to create a notebook");
             return $this->redirectToRoute("fos_user_registration_register");
         }
 
@@ -97,6 +102,7 @@ class NotebookController extends Controller
         if ($form->isValid()) {
 
             $notebookService = $this->get("app.notebook");
+            $notebook->setUser($this->getUser());
             $notebookService ->save($notebook);
 
             return $this->redirect($this->generateUrl('homepage'));

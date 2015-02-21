@@ -7,7 +7,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use UserBundle\Entity\User;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\NoteRepository")
  * @ORM\Table(name="note")
  * @Gedmo\SoftDeleteable(fieldName="deletedAt")
  */

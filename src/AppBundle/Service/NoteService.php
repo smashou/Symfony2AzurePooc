@@ -31,7 +31,12 @@ class NoteService extends CoreEntityService
 
     public function findLasts()
     {
-        $notes = $this->em->getRepository("AppBundle:Note")->findBy([], ['updatedAt' => "DESC"]);
+        if(null !== $this->user) {
+            $notes = $this->em->getRepository("AppBundle:Note")->findLastNotes($this->user);
+        } else {
+            $notes = $this->em->getRepository("AppBundle:Note")->findBy(["private" => false], ['updatedAt' => "DESC"]);
+        }
+
 
         return $notes;
     }
