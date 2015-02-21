@@ -35,6 +35,7 @@ class NoteVoter implements VoterInterface
 
     public function vote(TokenInterface $token, $note, array $attributes)
     {
+
         if (!$this->supportsClass(get_class($note))) {
             return VoterInterface::ACCESS_ABSTAIN;
         }
@@ -55,6 +56,9 @@ class NoteVoter implements VoterInterface
         $user = $token->getUser();
 
         if (!$user instanceof UserInterface) {
+            if(!$note->getPrivate() && $attribute == self::VIEW) {
+                return VoterInterface::ACCESS_GRANTED;
+            }
             return VoterInterface::ACCESS_DENIED;
         }
 
