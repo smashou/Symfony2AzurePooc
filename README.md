@@ -11,7 +11,19 @@ And maybe in the future:
 * Azure Blob storage
 * Azure Mobile notification/push
 
-Feel free ton PR what ever you want :)
+Feel free to PR what ever you want :)
+
+
+TODO
+----
+
+* Behat features
+* FInish FosUserBundle integration
+* Try to integrate [AzureDistributionBundle](https://github.com/brainsonic/AzureDistributionBundle)
+* Create azure deployment script
+* Test Test Test Test
+* Add a lot of features...
+
 
 Installation
 ------------
