@@ -95,7 +95,7 @@ parameters:
 
 knp_markdown:
     parser:
-        service: markdown.parser.sundown
+        service: markdown.parser.max
 
 fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'

@@ -1,0 +1,30 @@
+language: php
+php:      5.5
+branches:
+    only:
+        - master
+
+before_script:
+    - phpenv config-rm xdebug.ini
+    - composer install --optimize-autoloader --prefer-source
+    - gem install sass
+    - chmod 777 ./install
+    - ./install -e=test
+    - chmod -R 777 app/cache app/logs
+
+    - "sh -e /etc/init.d/xvfb start"
+    - "export DISPLAY=:99.0"
+    - "wget http://selenium-release.storage.googleapis.com/2.42/selenium-server-standalone-2.42.2.jar"
+    - "java -jar selenium-server-standalone-2.42.2.jar > /dev/null &"
+    - sleep 5
+
+    - ./app/console server:run localhost:8000 &
+    - sleep 5
+
+notifications:
+    # email:
+    #     - developer@example.com
+    # hipchat: token@room
+
+script:
+    - bin/behat --no-snippets --verbose
