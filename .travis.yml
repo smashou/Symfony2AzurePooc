@@ -8,6 +8,7 @@ before_script:
     - phpenv config-rm xdebug.ini
     - composer install --optimize-autoloader --prefer-source
     - gem install sass
+    - chmod 777 ./install
     - ./install -e=test
     - chmod -R 777 app/cache app/logs
 
