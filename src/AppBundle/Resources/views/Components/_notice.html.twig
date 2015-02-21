@@ -1,15 +1,16 @@
-{% for flashMessage in app.session.flashbag.get('notice') %}
-    <p class="bg-primary">{{ flashMessage }}</p>
-{% endfor %}
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <p class="notice bg-primary">{{ flashMessage }}</p>
+    {% endfor %}
 
-{% for flashMessage in app.session.flashbag.get('error') %}
-    <p class="bg-danger">{{ flashMessage }}</p>
-{% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        <p class="notice bg-danger">{{ flashMessage }}</p>
+    {% endfor %}
 
-{% for flashMessage in app.session.flashbag.get('success') %}
-    <p class="bg-success">{{ flashMessage }}</p>
-{% endfor %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <p class="notice bg-success">{{ flashMessage }}</p>
+    {% endfor %}
 
-{% for flashMessage in app.session.flashbag.get('warning') %}
-    <p class="bg-warning">{{ flashMessage }}</p>
-{% endfor %}
+    {% for flashMessage in app.session.flashbag.get('warning') %}
+        <p class="notice bg-warning">{{ flashMessage }}</p>
+    {% endfor %}
+
