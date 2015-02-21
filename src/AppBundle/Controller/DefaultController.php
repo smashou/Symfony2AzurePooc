@@ -18,7 +18,12 @@ class DefaultController extends Controller
     {
         $notebookService = $this->get("app.notebook");
         $noteService     = $this->get("app.note");
-        $notebooks = $notebookService->findAll();
+
+        if($this->isGranted("ROLE_USER")) {
+            $notebooks = $notebookService->findAll();
+        }else{
+            $notebooks = null;
+        }
 
         $notes     = $noteService->findLasts();
         $locale    = $request->getSession()->get("_locale");

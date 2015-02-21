@@ -17,10 +17,12 @@ class NotebookService extends CoreEntityService
         parent::__construct($entityManager, $logger, $security, $tokenStorage);
     }
 
+    /**
+     * @return \AppBundle\Entity\Notebook[]|array
+     */
     public function findAll()
     {
-
-        $notebooks = $this->em->getRepository("AppBundle:Notebook")->findBy([], ['updatedAt' => 'ASC']);
+        $notebooks = $this->em->getRepository("AppBundle:Notebook")->findBy(["user" => $this->user], ['updatedAt' => 'ASC']);
 
         return $notebooks;
     }
