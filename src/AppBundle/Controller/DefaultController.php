@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\Request;
 
+
 class DefaultController extends Controller
 {
     /**
@@ -17,7 +18,6 @@ class DefaultController extends Controller
     {
         $notebookService = $this->get("app.notebook");
         $noteService     = $this->get("app.note");
-
         $notebooks = $notebookService->findAll();
 
         $notes     = $noteService->findLasts();
@@ -29,5 +29,4 @@ class DefaultController extends Controller
             'notebooks' => $notebooks
         ];
     }
-
 }

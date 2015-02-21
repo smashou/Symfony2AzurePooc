@@ -81,6 +81,13 @@ class NotebookController extends Controller
      */
     public function createAction(Request $request)
     {
+        //If the user is not authenticated please register
+        if(!$this->isGranted("ROLE_USER")) {
+
+            $this->addFlash("notice", "Please register to create a notebook");
+            return $this->redirectToRoute("fos_user_registration_register");
+        }
+
         $notebook = new Notebook;
 
         $form = $this->createForm(new NotebookType(), $notebook);

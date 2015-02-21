@@ -70,6 +70,10 @@
                 <source>register</source>
                 <target>S'enregistrer</target>
             </trans-unit>
+            <trans-unit id="18">
+                <source>Please register to create a notebook</source>
+                <target>Merci de vous enregistrer pour créer un carnet de notes</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -1,8 +1,10 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 {% block content %}
+
     <div class="page-header">
         <h1>{{ note.title }} <small>{{ notebook.name }}</small></h1>
+
         <span class="pull-right">
             <a href="{{ path('update_note', {id: note.id}) }}" title="{{ 'update.note'|trans }}">{{ 'update.note'|trans }}</a>
         </span>
