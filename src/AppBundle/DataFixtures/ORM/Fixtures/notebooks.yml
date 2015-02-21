@@ -1,63 +1,117 @@
+UserBundle\Entity\User:
+    user1:
+        username: smashou
+        enabled: true
+        email: vincent@integral-service.fr
+        plainPassword: smashou
+        roles: [ROLE_USER]
+
+    user2:
+        username: guy
+        enabled: true
+        email: guy.bovagnet@integral-service.fr
+        plainPassword: guy
+        roles: [ROLE_USER]
+
 AppBundle\Entity\Notebook:
     notebookService1:
-        name: "iPhone"
+        name: "smashou Private"
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
+        private: true
+        user: @user1
+
     notebookService2:
-        name: "iPad"
+        name: "Guy Public"
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
+        private: false
+        user: @user2
+
+    notebookService2:
+        name: "Guy private"
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
+        private: true
+        user: @user2
+
+    notebookService3:
+        name: "smashou public"
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
+        private: false
+        user: @user1
 
 AppBundle\Entity\Note:
     note1:
         title: "iPhone 3G"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
         notebook: @notebookService1
+        private: true
+        user: @user1
 
     note2:
         title: "iPhone 3GS"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
         notebook: @notebookService1
+        private: true
+        user: @user1
 
     note3:
         title: "iPhone 4"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
         notebook: @notebookService1
+        private: true
+        user: @user1
 
     note4:
         title: "iPhone 4S"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
         notebook: @notebookService1
+        private: true
+        user: @user1
 
     note5:
         title: "iPhone 5"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
         notebook: @notebookService1
+        private: true
+        user: @user1
 
     note6:
         title: "iPhone 5S"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
         notebook: @notebookService1
+        private: true
+        user: @user1
 
     note7:
         title: "iPhone 5C"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
         notebook: @notebookService1
+        private: true
+        user: @user1
 
     note8:
         title: "iPhone 6"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
         notebook: @notebookService1
+        private: true
+        user: @user1
 
     note9:
         title: "iPhone 6S"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
         notebook: @notebookService1
+        private: true
+        user: @user1
 
     note10:
         title: "iPad 1"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
         notebook: @notebookService2
+        private: true
+        user: @user2
 
     note11:
         title: "iPad 2"
         content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis nibh ut turpis eleifend elementum. Etiam fermentum, massa et dignissim faucibus, dui felis ultricies nibh, laoreet dapibus nulla nisi a ligula. Integer vulputate metus nec arcu volutpat maximus. In tellus neque, tempus ac lobortis in, feugiat in magna. Nam tortor quam, porta nec gravida quis, tempus ut nisi. Nullam eget erat dapibus, gravida mi sed, semper ex. Ut elementum nunc vel consectetur venenatis."
         notebook: @notebookService2
+        private: false
+        user: @user2

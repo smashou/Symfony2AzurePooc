@@ -15,32 +15,37 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="col-md-3">
-            <div class="page-header">
-                <h1>{{ 'notebooks'|trans }}</h1>
-            </div>
-                {% for notebook in notebooks %}
-                <div class="media">
-                    {% if notebook.fileName is defined and notebook.fileName is not null %}
-                    <div class="media-left">
-                        <a href="{{ path('notebook', {id: notebook.id }) }}" title="{{ notebook.name }}">
-                            <img class="media-object" src="{{ asset(notebook.getWebPath()) }}" alt="{{ notebook.name }}">
-                        </a>
-                    </div>
-                    {% else %}
+        {% if is_granted("ROLE_USER") %}
+            <div class="col-md-3">
+                <div class="page-header">
+                    <h1>{{ 'Notebooks'|trans }}</h1>
+                </div>
+                    {% for notebook in notebooks %}
+                    <div class="media">
+                        {% if notebook.fileName is defined and notebook.fileName is not null %}
                         <div class="media-left">
                             <a href="{{ path('notebook', {id: notebook.id }) }}" title="{{ notebook.name }}">
-                                <img class="media-object" src="#" alt="{{ notebook.name }}">
+                                <img class="media-object" src="{{ asset(notebook.getWebPath()) }}" alt="{{ notebook.name }}">
                             </a>
                         </div>
-                    {% endif %}
-                    <div class="media-body">
-                        <h4 class="media-heading"><a href="{{ path('notebook', {id: notebook.id}) }}" title="{{ notebook.name }}">{{ notebook.name }}</a></h4>
-                        <small>{{ notebook.updatedAt|localizeddate('full', 'none', locale) }}</small>
+                        {% else %}
+                            <div class="media-left">
+                                <a href="{{ path('notebook', {id: notebook.id }) }}" title="{{ notebook.name }}">
+                                    <img class="media-object" src="#" alt="{{ notebook.name }}">
+                                </a>
+                            </div>
+                        {% endif %}
+                        <div class="media-body">
+                            <h4 class="media-heading"><a href="{{ path('notebook', {id: notebook.id}) }}" title="{{ notebook.name }}">{{ notebook.name }}</a></h4>
+                            <small>{{ notebook.updatedAt|localizeddate('full', 'none', locale) }}</small>
+                        </div>
                     </div>
-                </div>
+                    {% endfor %}
+            </div>
+        {% else %}
+            <div class="col-md-3">
 
-                {% endfor %}
-        </div>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

@@ -4,15 +4,31 @@ services:
         arguments:
             - @doctrine.orm.entity_manager
             - @logger
+            - @security.context
+            - @security.token_storage
 
     app.note:
         class: AppBundle\Service\NoteService
         arguments:
             - @doctrine.orm.entity_manager
             - @logger
+            - @security.context
+            - @security.token_storage
 
     app.locale_listener:
         class: AppBundle\EventListener\LocaleListener
         arguments: ["%kernel.default_locale%"]
         tags:
             - { name: kernel.event_subscriber }
+
+    security.access.note_voter:
+        class:      AppBundle\Security\Authorization\Voter\NoteVoter
+        public:     false
+        tags:
+           - { name: security.voter }
+
+    security.access.notebook_voter:
+        class:      AppBundle\Security\Authorization\Voter\NotebookVoter
+        public:     false
+        tags:
+          - { name: security.voter }

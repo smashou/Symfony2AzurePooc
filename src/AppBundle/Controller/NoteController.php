@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Notebook;
 use AppBundle\Entity\Note;
@@ -23,6 +24,10 @@ class NoteController extends Controller
 
         $note = $noteService->findOneById($id);
 
+        if (false === $this->get('security.authorization_checker')->isGranted('view', $note)) {
+            throw new AccessDeniedException('Unauthorised access!');
+        }
+
         $notebook = $note->getNotebook();
 
         return [
@@ -37,6 +42,13 @@ class NoteController extends Controller
      */
     public function createAction(Request $request)
     {
+        //If the user is not authenticated please register
+        if(!$this->isGranted("ROLE_USER")) {
+
+            $this->addFlash("notice", "Please register or login to create a note");
+            return $this->redirectToRoute("fos_user_registration_register");
+        }
+
         $note = new Note;
 
         $form = $this->createForm(new NoteType(), $note);
@@ -46,6 +58,8 @@ class NoteController extends Controller
         if ($form->isValid()) {
 
             $noteService = $this->get("app.note");
+
+            $note->setUser($this->getUser());
             $noteService ->save($note);
 
             return $this->redirect($this->generateUrl('notebook', ["id" => $note->getNotebook()->getId()]));
@@ -65,11 +79,15 @@ class NoteController extends Controller
         $noteService = $this->get("app.note");
         $note        = $noteService->findOneById($id);
 
+        if (false === $this->get('security.authorization_checker')->isGranted('edit', $note)) {
+            throw new AccessDeniedException('Unauthorised access!');
+        }
+
         if(null !== $note) {
             $note->setContent($request->get("content"));
-            $noteService->flush();
+            $noteService->save($note);
         }else{
-            return new HttpNotFoundException;
+            $this->createNotFoundException("Note Not Found");
         }
 
         return ["ok"];
@@ -86,7 +104,11 @@ class NoteController extends Controller
         $note = $noteService->findOneById($id);
 
         if(null === $note) {
+            $this->createNotFoundException("Note Not Found");
+        }
 
+        if (false === $this->get('security.authorization_checker')->isGranted('edit', $note)) {
+            throw new AccessDeniedException('Unauthorised access!');
         }
 
         $form = $this->createForm(new NoteType(), $note);

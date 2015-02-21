@@ -62,6 +62,22 @@
                 <source>last.notes</source>
                 <target>Dernières notes</target>
             </trans-unit>
+            <trans-unit id="16">
+                <source>Login</source>
+                <target>S'authentifier</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>register</source>
+                <target>S'enregistrer</target>
+            </trans-unit>
+            <trans-unit id="18">
+                <source>Please register or login to create a notebook</source>
+                <target>Merci de vous enregistrer ou vous authentifier pour créer un carnet de notes</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>Please register or login to create a note</source>
+                <target>Merci de vous enregistrer ou vous authentifier pour créer une note</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
