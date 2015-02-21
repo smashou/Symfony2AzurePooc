@@ -15,7 +15,7 @@ default:
 
     extensions:
         Behat\MinkExtension:
-            base_url:  'http://www.symfony2azure.dev/app_test.php/'
+            base_url:  'http://localhost:8000/app_test.php/'
             sessions:
                 default:
                     goutte:     ~
