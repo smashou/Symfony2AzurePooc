@@ -20,3 +20,9 @@ services:
         arguments: ["%kernel.default_locale%"]
         tags:
             - { name: kernel.event_subscriber }
+
+    security.access.note_voter:
+        class:      AppBundle\Security\Authorization\Voter\NoteVoter
+        public:     false
+        tags:
+           - { name: security.voter }
