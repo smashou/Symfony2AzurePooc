@@ -2,6 +2,8 @@ Symfony2 Azure Pooc
 ========================
 
 [![Build Status](https://travis-ci.org/smashou/Symfony2AzurePooc.svg?branch=master)](https://travis-ci.org/smashou/Symfony2AzurePooc)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/smashou/Symfony2AzurePooc.svg)](http://isitmaintained.com/project/smashou/Symfony2AzurePooc "Average time to resolve an issue")
+[![Percentage of issues still open](http://isitmaintained.com/badge/open/smashou/Symfony2AzurePooc.svg)](http://isitmaintained.com/project/smashou/Symfony2AzurePooc "Percentage of issues still open")
 
 This Symfony2 project is a really simple WIP POOC for hosting Symfony2 on:
  * Microsoft Azure Websites
